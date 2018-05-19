@@ -17,8 +17,6 @@
   ],
   "plugins": [
     "transform-vue-jsx",
-    "transform-runtime",
-    "transform-decorators-legacy",
-    "transform-async-to-module-method"
+    "transform-runtime"
   ]
 }

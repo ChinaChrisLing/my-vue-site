@@ -1,0 +1,30 @@
+.clearfix {
+  &:before {
+    display: table;
+    content: ' ';
+  }
+  &:after {
+    clear: both;
+    display: table;
+    content: ' ';
+  }
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+body{
+  color: #2a2a2a;
+  background-color: #e7e8eb;
+  .on {
+    background: #42b549;
+    a {
+      color:#fff !important;
+    }
+  }
+}
