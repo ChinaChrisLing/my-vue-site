@@ -21,7 +21,7 @@ const rootState = {
   userInfo: {},
   navInfo: [],
   menuInfo: [],
-  appMenuCode: 'ManagementCenter'
+  appMenuCode: 'DataService'
 }
 
 const rootGetters = {

@@ -5,14 +5,22 @@
         <span class="title"> {{menus.menu1.menu_name}}</span>
       </dt>
       <dd v-for="(item,index) in menus.menu2" :key="item.menu_code"
+          @click="clickHandle('selectMenu',index)"
           :class="[selectMenu === index ? 'on' : '','dd-content']">
-        <a :href="item.url">{{item.menu_name}}</a></dd>
+        <router-link tag="a"
+                     class="router-item"
+                     :to="{name:item.menu_code}"
+                     >{{item.menu_name}}
+        </router-link>
+        <!--<a :href="item.url" @click="selectMenu = index">{{item.menu_name}}</a>-->
+      </dd>
     </dl>
   </div>
 </template>
 
 <script>
 import {SERVER_MENU_DATA} from '../../store/index'
+
 export default {
   name: 'layout-menu',
   data () {
@@ -40,6 +48,11 @@ export default {
   },
   created () {
     this.$store.dispatch(SERVER_MENU_DATA)
+  },
+  methods: {
+    clickHandle (e, v) {
+      this[e] = v
+    }
   }
 }
 </script>
@@ -67,7 +80,7 @@ export default {
     }
     .dd-content {
       line-height: 36px;
-      a {
+      .router-item {
         display: block;
         padding: 0 0 0 60px;
         overflow: hidden;
