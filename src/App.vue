@@ -28,7 +28,7 @@ export default {
 <style lang="less">
   @import "assets/css/reset.less";
   @import "assets/css/common.less";
-
+  @import "assets/css/module.less";
   .content-container {
     width: 100%;
     margin: 104px 0 138px;

@@ -4,6 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import store from './store/index'
 import router from './router/index'
+import VueLazyLoad from 'vue-lazyload'
+Vue.use(VueLazyLoad, {
+  preLoad: 1.3,
+  error: './assets/logo.png',
+  loading: './assets/logo.png',
+  attempt: 1
+})
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

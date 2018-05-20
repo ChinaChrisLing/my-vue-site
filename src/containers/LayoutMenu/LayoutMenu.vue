@@ -2,6 +2,7 @@
   <div class="manage-menu">
     <dl>
       <dt class="dt-title" :key="menus.menu1.menu_code">
+        <span :class="'module-icon '+menus.menu1.menu_icon"></span>
         <span class="title"> {{menus.menu1.menu_name}}</span>
       </dt>
       <dd v-for="(item,index) in menus.menu2" :key="item.menu_code"
@@ -70,12 +71,12 @@ export default {
       padding: 0 30px 0;
       font-weight: 400;
       color: #888;
-      text-align: center;
       .icon {
 
       }
       .title {
         font-size: 16px;
+        vertical-align: middle;
       }
     }
     .dd-content {

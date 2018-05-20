@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapGetters, mapActions} from 'vuex'
 import {GET_USER_DATA, SERVER_USER_DATA} from '../../store/index'
 
 export default {
@@ -76,24 +76,40 @@ export default {
     }
   },
   created () {
-    this.$store.dispatch(SERVER_USER_DATA)
+    this.checkError().then(r => {
+      console.log(r)
+      if (r) {
+        if (this.$store.state.userInfo) {
+          window.location.href = this.$store.state.userInfo.logout_url
+        } else {
+          this.$router.push('/404')
+        }
+      }
+    })
   },
   methods: {
+    ...mapActions([SERVER_USER_DATA]),
     hoverHander (e, v) {
       this[e] = v
+    },
+    async checkError () {
+      await this[SERVER_USER_DATA]()
+      return new Promise((resolve, reject) => resolve(this.$store.state.error))
     }
   }
 }
 </script>
 
 <style scoped lang="less">
+  @import "../../assets/css/index.less";
+
   .manage-header {
     position: fixed;
     width: 100%;
     z-index: 99999;
     min-width: 1200px;
     background: #fff;
-    border-top: 4px solid #44b549;
+    border-top: 4px solid @primaryBgColor;
     border-bottom: 1px solid #d9dadc;
     top: 0;
     .header-container {
@@ -110,7 +126,7 @@ export default {
       .hader-nav {
         width: 810px;
         .on {
-          background: #44b549;
+          background: @primaryBgColor;
           color: #fff !important;
         }
         .nav-li {

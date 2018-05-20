@@ -1,3 +1,6 @@
+@import "./index.less";
+
+
 .clearfix {
   &:before {
     display: table;
@@ -20,9 +23,9 @@
 
 body {
   color: #2a2a2a;
-  background-color: #e7e8eb;
+  background-color: @bodyBgColor;
   .on {
-    background: #42b549 !important;
+    background: @primaryBgColor !important;
     a, .router-item {
       color: #fff !important;
       cursor:pointer;
