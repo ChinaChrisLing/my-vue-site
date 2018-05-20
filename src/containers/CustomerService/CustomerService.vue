@@ -1,6 +1,8 @@
 <template>
   <div>
-    <screen-container></screen-container>
+    <screen-container>
+      <h4 slot="panel-content">移动客服</h4>
+    </screen-container>
   </div>
 </template>
 

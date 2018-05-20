@@ -1,7 +1,9 @@
 <template>
     <div>
       <div>
-        <screen-container></screen-container>
+        <screen-container>
+          <h4 slot="panel-content">移动质检</h4>
+        </screen-container>
       </div>
     </div>
 </template>

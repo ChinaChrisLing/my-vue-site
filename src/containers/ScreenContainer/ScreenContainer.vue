@@ -20,6 +20,9 @@
         <router-view :dmpData="dmpData"></router-view>
       </keep-alive>
     </div>
+    <div>
+      <slot name="panel-content"></slot>
+    </div>
   </div>
 </template>
 
