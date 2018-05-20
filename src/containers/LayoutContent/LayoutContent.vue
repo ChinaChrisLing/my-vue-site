@@ -1,6 +1,6 @@
 <template>
   <div class="manage-content">
-    <h4 class="content-title">组织架构</h4>
+    <h4 class="content-title">数据大屏</h4>
     <router-view></router-view>
   </div>
 </template>

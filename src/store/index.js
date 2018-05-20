@@ -62,6 +62,7 @@ const rootActions = {
     let [err, userData] = await getData(Service.getLoginData)
     if (err) {
       commit(SET_ERROR_DATA, true)
+      return
     }
     commit(SET_USER_DATA, userData.data)
     await dispatch(SERVER_NAV_DATA)
@@ -70,6 +71,7 @@ const rootActions = {
     let [err, appData] = await getData(Service.getMetnu)
     if (err) {
       commit(SET_ERROR_DATA, true)
+      return
     }
     commit(SET_MENU_DATA, appData.data)
   },
@@ -77,6 +79,7 @@ const rootActions = {
     let [err, navData] = await getData(Service.getNavigation)
     if (err) {
       commit(SET_ERROR_DATA, true)
+      return
     }
     commit(SET_NAV_DATA, navData.data)
   }

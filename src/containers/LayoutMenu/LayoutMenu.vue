@@ -71,9 +71,6 @@ export default {
       padding: 0 30px 0;
       font-weight: 400;
       color: #888;
-      .icon {
-
-      }
       .title {
         font-size: 16px;
         vertical-align: middle;

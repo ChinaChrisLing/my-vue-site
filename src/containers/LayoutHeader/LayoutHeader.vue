@@ -1,5 +1,5 @@
 <template>
-  <div class="manage-header">
+  <div class="manage-header" v-if="user">
     <ul class="header-container clearfix">
       <li class="logo pull-left"></li>
       <li class="hader-nav pull-left">
@@ -45,7 +45,7 @@
 <script>
 import {mapGetters, mapActions} from 'vuex'
 import {GET_USER_DATA, SERVER_USER_DATA} from '../../store/index'
-
+import Service from '../../axios/service'
 export default {
   name: 'layout-header',
   data () {
@@ -63,7 +63,7 @@ export default {
       let navsData = this.$store.state.navInfo
       let nav1 = []
       let nav2 = []
-      if (navsData.length > 7) {
+      if (navsData && navsData.length > 7) {
         nav1 = navsData.slice(0, 7)
         nav2 = navsData.slice(7)
       } else {
@@ -76,16 +76,7 @@ export default {
     }
   },
   created () {
-    this.checkError().then(r => {
-      console.log(r)
-      if (r) {
-        if (this.$store.state.userInfo) {
-          window.location.href = this.$store.state.userInfo.logout_url
-        } else {
-          this.$router.push('/404')
-        }
-      }
-    })
+    this.checkError()
   },
   methods: {
     ...mapActions([SERVER_USER_DATA]),
@@ -94,7 +85,9 @@ export default {
     },
     async checkError () {
       await this[SERVER_USER_DATA]()
-      return new Promise((resolve, reject) => resolve(this.$store.state.error))
+      if (this.$store.state.error) {
+        window.location.href = Service.getLogoutUrl
+      }
     }
   }
 }
@@ -222,6 +215,10 @@ export default {
             margin-left: 14px;
             margin-top: 20px;
             display: inline-block;
+            &:hover {
+              text-decoration: underline;
+              color:#337ab7;
+            }
           }
         }
       }

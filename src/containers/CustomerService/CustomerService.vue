@@ -1,13 +1,17 @@
 <template>
   <div>
-    customer-service
-
+    <screen-container></screen-container>
   </div>
 </template>
 
 <script>
+import ScreenContainer from '../ScreenContainer/ScreenContainer'
+
 export default {
-  name: 'customer-service'
+  name: 'customer-service',
+  components: {
+    ScreenContainer
+  }
 }
 </script>
 

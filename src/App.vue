@@ -7,6 +7,7 @@
         <layout-content></layout-content>
       </div>
     </div>
+    <layout-footer></layout-footer>
   </div>
 </template>
 
@@ -14,13 +15,14 @@
 import LayoutHeader from './containers/LayoutHeader/LayoutHeader'
 import LayoutMenu from './containers/LayoutMenu/LayoutMenu'
 import LayoutContent from './containers/LayoutContent/LayoutContent'
-
+import LayoutFooter from './components/LayoutFooter/LayoutFooter'
 export default {
   name: 'App',
   components: {
     LayoutHeader,
     LayoutMenu,
-    LayoutContent
+    LayoutContent,
+    LayoutFooter
   }
 }
 </script>
@@ -34,7 +36,7 @@ export default {
     margin: 104px 0 138px;
     .content-wrap {
       width: 1200px;
-      min-height: 800px;
+      min-height: 500px;
       background-color: #fff;
       border: 1px solid #d9dadc;
       margin: 0 auto;

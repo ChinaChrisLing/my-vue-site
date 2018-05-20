@@ -25,6 +25,7 @@ class Service {
   static getDmpList = `${apiHost}/bms/dataService/data-service/get-dmp-list`;
 
   static getMenuList = `${apiHost}/bms/Organization/layout/get-menus?app_code=DataService&__FLAG__=true`;
+  static getLogoutUrl = `${hostName}/bms/auth/logout`
 }
 
 export default Service

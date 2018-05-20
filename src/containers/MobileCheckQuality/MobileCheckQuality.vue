@@ -1,12 +1,18 @@
 <template>
     <div>
-      mobile-check-quality
+      <div>
+        <screen-container></screen-container>
+      </div>
     </div>
 </template>
 
 <script>
+import ScreenContainer from '../ScreenContainer/ScreenContainer'
 export default {
-  name: 'mobile-check-quality'
+  name: 'mobile-check-quality',
+  components: {
+    ScreenContainer
+  }
 }
 </script>
 

@@ -1,6 +1,5 @@
 @import "./index.less";
 
-
 .clearfix {
   &:before {
     display: table;
@@ -28,7 +27,29 @@ body {
     background: @primaryBgColor !important;
     a, .router-item {
       color: #fff !important;
-      cursor:pointer;
+      cursor: pointer;
+    }
+  }
+
+  .btn {
+    min-width: 90px;
+    padding: 5px 12px;
+    overflow: visible;
+    font-size: 14px;
+    border: none;
+    border-radius: 3px;
+    outline: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  .btn-primary {
+    color: #fff !important;
+    background-color: #44b549 !important;
+    border-color: #44b549 !important;
+    &:hover {
+      background-color: #37913a !important;
+      border-color: #37913a !important;
+      cursor: pointer;
     }
   }
 }
