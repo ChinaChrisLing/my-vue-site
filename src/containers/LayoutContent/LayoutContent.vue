@@ -1,7 +1,12 @@
 <template>
-  <div class="manage-content">
-    <h4 class="content-title">数据大屏</h4>
-    <router-view></router-view>
+  <div class="content-container">
+    <div class="content-wrap">
+      <slot name="layout-menu"></slot>
+      <div class="manage-content">
+        <h4 class="content-title">数据大屏</h4>
+        <router-view></router-view>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -12,18 +17,33 @@ export default {
 </script>
 
 <style scoped lang="less">
-  .manage-content {
-    display: table-cell;
-    width: 992px;
-    .content-title {
-      height: 55px;
-      margin: 0;
-      line-height: 55px;
+  .content-container {
+    width: 100%;
+    margin: 104px 0 138px;
+    .content-wrap {
+      width: 1200px;
+      min-height: 500px;
+      background-color: #fff;
+      border: 1px solid #d9dadc;
+      margin: 0 auto;
       position: relative;
-      padding: 0 30px;
-      border-bottom: 1px solid #e7e7eb;
-      font-size: 16px;
-      font-weight: 350;
+      display: table;
+      .manage-content {
+        display: table-cell;
+        width: 992px;
+        border-left: 1px solid #e7e7eb;;
+        .content-title {
+          height: 55px;
+          margin: 0;
+          line-height: 55px;
+          position: relative;
+          padding: 0 30px;
+          border-bottom: 1px solid #e7e7eb;
+          font-size: 16px;
+          font-weight: 350;
+        }
+      }
     }
   }
+
 </style>

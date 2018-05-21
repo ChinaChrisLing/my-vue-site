@@ -7,6 +7,7 @@ const CustomerService = () => import('../containers/CustomerService/CustomerServ
 const SingleScreen = () => import('../components/SingleScreen/SingleScreen')
 const MultiScreen = () => import('../components/MultiScreen/MultiScreen')
 const Error404 = () => import('../components/Error/Error404')
+
 Vue.use(VueRouter)
 
 export default new VueRouter({

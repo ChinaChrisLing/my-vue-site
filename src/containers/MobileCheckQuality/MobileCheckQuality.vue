@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import ScreenContainer from '../ScreenContainer/ScreenContainer'
+import ScreenContainer from '../../components/ScreenContainer/ScreenContainer'
 export default {
   name: 'mobile-check-quality',
   components: {

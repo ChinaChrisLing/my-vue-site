@@ -27,49 +27,33 @@
 </template>
 
 <script>
-import {createNamespacedHelpers} from 'vuex'
-import {SERVER_DMP_DATA, GET_DMP_DATA} from '../../store/MobileCheckRoom/index'
 
-const {mapActions, mapGetters} = createNamespacedHelpers('mcr')
 export default {
   name: 'screen-container',
   props: {
     showContent: {
       type: Boolean,
       default: false
+    },
+    dmpData: {
+      type: Array,
+      default: function () {
+        return []
+      }
+    },
+    tabData: {
+      type: Array,
+      default: function () {
+        return []
+      }
     }
   },
   data () {
     return {
-      tabData: [
-        {
-          path: '/sg',
-          tag: 'a',
-          name: '单屏数据',
-          code: 'singleScreen'
-        },
-        {
-          path: '/mg',
-          tag: 'a',
-          name: '多屏数据',
-          code: 'multiScreen'
-        }
-      ],
       selectTab: 0
     }
   },
-  computed: {
-    ...mapGetters({
-      dmpData: GET_DMP_DATA
-    })
-  },
-  mounted () {
-    this[SERVER_DMP_DATA]()
-  },
   methods: {
-    ...mapActions([
-      SERVER_DMP_DATA
-    ]),
     clickHandle (e, v) {
       this[e] = v
     }
